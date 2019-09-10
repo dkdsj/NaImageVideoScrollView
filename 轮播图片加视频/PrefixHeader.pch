@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  轮播图片加视频
+//
+//  Created by ZZ on 2019/9/6.
+//  Copyright © 2019 ZZ. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry/Masonry.h"
+#import "ZFPlayer.h"
+#import "NKAVPlayerView.h"
+
+
+
+
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define StrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//RGB
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b) RGBA(r, g, b, 1.0f)
+
+//颜色
+#define kColorWithHex(s)  [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
+
+//随机颜色
+#define kColorRandom RGBA(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+
+#endif /* PrefixHeader_pch */
