@@ -76,7 +76,20 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    vWuxian.sources = @[@"IU-9.png",@"IU-8.png",@"IU-7.png",@"IU-6.png", @"IU-1.png",@"IU-2.png",@"IU-3.png",@"IU-4.png"];
+    NSMutableArray *bds = [NSMutableArray array];
+    for (int i = 1; i < 3; i++) {
+        BannerModel *model = [BannerModel modeWithType:@"1" url:[NSString stringWithFormat:@"IU-%d.png", i]];
+        [bds addObject:model];
+    }
+    for (int i = 1; i < 4; i++) {
+        BannerModel *model = [BannerModel modeWithType:@"0" url:[[NSBundle mainBundle] pathForResource:@"video2" ofType:@"mp4"]];
+        [bds addObject:model];
+    }
+    for (int i = 1; i < 5; i++) {
+        BannerModel *model = [BannerModel modeWithType:@"1" url:[NSString stringWithFormat:@"IU-%d.png", i*2]];
+        [bds addObject:model];
+    }
+    vWuxian.sources = bds;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
